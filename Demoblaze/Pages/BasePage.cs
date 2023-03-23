@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using TechTalk.SpecFlow;
+using Demoblaze.Helpers;
 
 namespace Demoblaze.Pages
 {
@@ -22,8 +23,6 @@ namespace Demoblaze.Pages
         }
         public ReadOnlyCollection<IWebElement> findElements(By element)
         {
-            waitForElement(element);
-            // int count = Driver.FindElements(element).Count;
             return Driver.FindElements(element);
         }
         public ReadOnlyCollection<IWebElement> findElements(string element)
@@ -100,7 +99,7 @@ namespace Demoblaze.Pages
         {
             try
             {
-                WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+                WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(30));
                 return wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(element));
             }
             catch

@@ -1,5 +1,4 @@
-﻿using ExcelDataReader;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
@@ -16,7 +15,6 @@ namespace Demoblaze.Helpers
         public static int tHigh = 5000;
         public static int tMedium = 3000;
         public static int tLow = 1000;
-        public static DataTable resultTable;
 
         public static void wait(int time)
         {

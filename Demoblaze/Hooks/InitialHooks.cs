@@ -1,6 +1,4 @@
-﻿using Amazon.DeviceFarm.Model;
-using Amazon.DeviceFarm;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Remote;
 using System;
@@ -12,9 +10,10 @@ using OpenQA.Selenium;
 namespace Demoblaze.Hooks
 {
     [Binding]
-    public sealed class InitialHooks
+    public class InitialHooks
     {
         public static IWebDriver Driver;
+        public static string baseURL = "https://www.demoblaze.com/";
         [BeforeScenario]
         public static void BeforeScenario()
         {
@@ -22,7 +21,7 @@ namespace Demoblaze.Hooks
         }
         public static void CreateWebDriver()
         {
-            var baseDir = AppDomain.CurrentDomain.BaseDirectory;
+            //   var baseDir = AppDomain.CurrentDomain.BaseDirectory;
 
             ChromeOptions options = new ChromeOptions();
             options.AddArguments("--no-sandbox");
@@ -31,11 +30,9 @@ namespace Demoblaze.Hooks
             options.AddArguments("--incognito");
             options.AddArguments("--test-type");
 
-            Driver = new ChromeDriver(baseDir, options);
+            Driver = new ChromeDriver(options);
             Driver.Manage().Window.Maximize();
-            Driver.Navigate().GoToUrl("https://www.demoblaze.com/");
-
-
+            Driver.Navigate().GoToUrl(baseURL);
         }
 
         [AfterScenario]
