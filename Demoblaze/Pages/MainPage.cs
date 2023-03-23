@@ -31,12 +31,12 @@ namespace Demoblaze.Pages
 
         public void enterUsername(string userName)
         {
-            Helper.wait(1000);
+            Helper.wait(Helper.tLow);
             sendKeys(txtUserName, userName + Helper.generateLetter());
         }
         public void enterSameUsername(string userName)
         {
-            Helper.wait(1000);
+            Helper.wait(Helper.tLow);
             sendKeys(txtUserName, userName);
         }
         public void enterPassword(string password) => sendKeys(txtPassword, password + Helper.generateLetter());
@@ -46,7 +46,7 @@ namespace Demoblaze.Pages
 
         public bool hasSignUMessage(string succes)
         {
-            Helper.wait(1000);
+            Helper.wait(Helper.tLow);
             string message = Driver.SwitchTo().Alert().Text;
             bool successMessage = false;
             if (succes.Equals("yes"))

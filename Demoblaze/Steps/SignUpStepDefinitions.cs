@@ -23,8 +23,8 @@ namespace Demoblaze.Steps
             mainPage.clickSignUp();
         }
 
-        [When(@"Enter username (.*) (.*)")]
-        public void WhenEnterUsername(string userName, string success)
+        [When(@"Enter username to singUp (.*) (.*)")]
+        public void WhenEnterUsernameToSingUp(string userName, string success)
         {
             if (success.Equals("yes"))
             {
@@ -36,9 +36,8 @@ namespace Demoblaze.Steps
             }
         }
 
-        [When(@"Enter password (.*) (.*)")]
-        [When(@"Enter password (.*) (.*)")]
-        public void WhenEnterPassword(string password, string success)
+        [When(@"Enter password to singUp (.*) (.*)")]
+        public void WhenEnterPasswordToSingUp(string password, string success)
         {
             if (success.Equals("yes"))
             {
@@ -56,8 +55,8 @@ namespace Demoblaze.Steps
             mainPage.clickSignUpEnter();
         }
 
-        [Then(@"Show the message (.*)")]
-        public void ThenShowTheMessage(string success)
+        [Then(@"Show the message for signup (.*)")]
+        public void ThenShowTheMessageForSignup(string success)
         {
             Assert.IsTrue(mainPage.hasSignUMessage(success));
         }
