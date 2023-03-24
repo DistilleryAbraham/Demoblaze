@@ -43,3 +43,13 @@ Scenario Outline: 03_SigUp_already_exist
 Examples:
 	| userName     | password     | successful |
 	| userNameSame | passwordSame | no         |
+
+@signup
+Scenario Outline: 04_SigUp_by_API
+	Given Open demoblaze application
+	When Send rest for create user <userName> <password>
+	Then Validate status code response <statusCode>
+
+Examples:
+	| userName    | password    | statusCode |
+	| userNameAPI | passwordAPI | 200        |

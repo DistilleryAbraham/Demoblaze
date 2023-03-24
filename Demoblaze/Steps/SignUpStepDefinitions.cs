@@ -1,5 +1,6 @@
 using Demoblaze.Hooks;
 using Demoblaze.Pages;
+using Demoblaze.Request;
 using NUnit.Framework;
 using System;
 using TechTalk.SpecFlow;
@@ -60,5 +61,19 @@ namespace Demoblaze.Steps
         {
             Assert.IsTrue(mainPage.hasSignUMessage(success));
         }
+
+        [When(@"Send rest for create user (.*) (.*)")]
+        public void WhenSendRestForCreateUser(string user, string password)
+        {
+
+            Rest.PostRequest(mainPage.createBodyForSignupRest(user, password), "https://api.demoblaze.com/signup");
+        }
+
+        [Then(@"Validate status code response (.*)")]
+        public void ThenValidateStatusCodeResponse(int codeResponse)
+        {
+            Assert.AreEqual(codeResponse, Rest.statuscode);
+        }
+
     }
 }

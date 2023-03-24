@@ -223,6 +223,47 @@ this.ScenarioInitialize(scenarioInfo);
             }
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("04_SigUp_by_API")]
+        [NUnit.Framework.CategoryAttribute("signup")]
+        [NUnit.Framework.TestCaseAttribute("userNameAPI", "passwordAPI", "200", null)]
+        public void _04_SigUp_By_API(string userName, string password, string statusCode, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "signup"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("userName", userName);
+            argumentsOfScenario.Add("password", password);
+            argumentsOfScenario.Add("statusCode", statusCode);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("04_SigUp_by_API", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 48
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 49
+ testRunner.Given("Open demoblaze application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 50
+ testRunner.When(string.Format("Send rest for create user {0} {1}", userName, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 51
+ testRunner.Then(string.Format("Validate status code response {0}", statusCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

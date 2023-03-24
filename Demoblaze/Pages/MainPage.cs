@@ -73,5 +73,6 @@ namespace Demoblaze.Pages
             Driver.SwitchTo().Alert().Accept();
             return successMessage;
         }
+        public string createBodyForSignupRest(string user, string password) => @"{""username"":""" + user + Helper.generateLetter() + @""", ""password"": """ + password + Helper.generateLetter() + @"""}";
     }
 }

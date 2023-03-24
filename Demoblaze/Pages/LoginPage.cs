@@ -20,10 +20,9 @@ namespace Demoblaze.Pages
         protected By optLogin = By.Id("login2");
         protected By btnLogin = By.XPath("//button[@onclick='logIn()']");
         protected By btnClose = By.XPath("//div[@class='modal-footer']/button[@class='btn btn-secondary']");
-        /*  "//div[@class='error']/p[text()='Acceder']"*/
         public void enterUsername(string userName)
         {
-            Helper.wait(1000);
+            Helper.wait(Helper.tLow);
             sendKeys(txtUserName, userName);
         }
         public void enterPassword(string password) => sendKeys(txtPassword, password);
@@ -39,7 +38,7 @@ namespace Demoblaze.Pages
 
         public bool validateMessageForLogin(string typeMessage)
         {
-            Helper.wait(1000);
+            Helper.wait(Helper.tLow);
             switch (typeMessage)
             {
                 case "empty":
@@ -55,9 +54,10 @@ namespace Demoblaze.Pages
         }
         public bool validateNameOfUSer(string name)
         {
-            Helper.wait(1000);
+            Helper.wait(Helper.tLow);
             return getText(findElement(btnNameOfUser)).Contains(name);
         }
 
+        public string createBodyForLoginRest(string user, string password) => @"{""username"":""" + user + @""", ""password"": """ + password + @"""}";
     }
 }

@@ -1,5 +1,6 @@
 using Demoblaze.Hooks;
 using Demoblaze.Pages;
+using Demoblaze.Request;
 using NUnit.Framework;
 using System;
 using TechTalk.SpecFlow;
@@ -59,6 +60,16 @@ namespace Demoblaze.Steps
         {
             Assert.IsTrue(loginPage.showLoginOption());
         }
+
+        [Given(@"Login application (.*) (.*)")]
+        public void GivenLoginApplication(string username, string password)
+        {
+            WhenClickOnLoginOption();
+            WhenEnterUsernameToLogin(username);
+            WhenEnterPasswordToLogin(password);
+            WhenClickOnLoginButton();
+        }
+
 
 
     }
