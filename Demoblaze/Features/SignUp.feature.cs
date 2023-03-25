@@ -264,6 +264,44 @@ this.ScenarioInitialize(scenarioInfo);
             }
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("04_SigUp_by_API_already_exist")]
+        [NUnit.Framework.CategoryAttribute("sigup")]
+        [NUnit.Framework.TestCaseAttribute("userNameAPI", "passwordAPI", "This user already exist.", null)]
+        public void _04_SigUp_By_API_Already_Exist(string userName, string password, string bodyResponse, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "sigup"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("userName", userName);
+            argumentsOfScenario.Add("password", password);
+            argumentsOfScenario.Add("bodyResponse", bodyResponse);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("04_SigUp_by_API_already_exist", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 58
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 59
+ testRunner.When(string.Format("Send rest for already exist user {0} {1}", userName, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 60
+ testRunner.Then(string.Format("Validate body response {0}", bodyResponse), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

@@ -75,5 +75,16 @@ namespace Demoblaze.Steps
             Assert.AreEqual(codeResponse, Rest.statuscode);
         }
 
+        [When(@"Send rest for already exist user (.*) (.*)")]
+        public void WhenSendRestForAlreadyExistUserUserNameAPIPasswordAPI(string user, string password)
+        {
+            Rest.PostRequest(mainPage.createBodyForSameSignupRest(user, password), "https://api.demoblaze.com/signup");
+        }
+
+        [Then(@"Validate body response (.*)")]
+        public void ThenValidateBodyResponse(string bodyResponse)
+        {
+            Assert.IsTrue(mainPage.validateBodyResponse(bodyResponse));
+        }
     }
 }

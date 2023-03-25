@@ -1,5 +1,6 @@
 ﻿using Demoblaze.Helpers;
 using Demoblaze.Hooks;
+using Demoblaze.Request;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
@@ -74,5 +75,7 @@ namespace Demoblaze.Pages
             return successMessage;
         }
         public string createBodyForSignupRest(string user, string password) => @"{""username"":""" + user + Helper.generateLetter() + @""", ""password"": """ + password + Helper.generateLetter() + @"""}";
+        public string createBodyForSameSignupRest(string user, string password) => @"{""username"":""" + user + @""", ""password"": """ + password  + @"""}";
+        public bool validateBodyResponse(string response) => Rest.bodyResponse.Contains(response);
     }
 }

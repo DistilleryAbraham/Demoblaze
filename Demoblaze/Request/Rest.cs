@@ -16,6 +16,7 @@ namespace Demoblaze.Request
         public static RestRequest restRequest;
         public static RestResponse response;
         public static int statuscode;
+        public static string bodyResponse;
         public static void PostRequest(string jsonString, string url)
         {
             restClient = new RestClient(url);
@@ -23,6 +24,7 @@ namespace Demoblaze.Request
             restRequest.RequestFormat = DataFormat.Json;
             restRequest.AddBody(jsonString);
             response = restClient.Execute(restRequest);
+            bodyResponse = response.Content.ToString();
             statuscode = (int)response.StatusCode;
         }
     }

@@ -53,3 +53,12 @@ Scenario Outline: 04_SigUp_by_API
 Examples:
 	| userName    | password    | statusCode |
 	| userNameAPI | passwordAPI | 200        |
+
+@sigup
+Scenario Outline: 04_SigUp_by_API_already_exist
+	When Send rest for already exist user <userName> <password>
+	Then Validate body response <bodyResponse>
+
+Examples:
+	| userName    | password    | bodyResponse             |
+	| userNameAPI | passwordAPI | This user already exist. |

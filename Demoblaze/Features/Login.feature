@@ -73,3 +73,12 @@ Examples:
 	| 123sddf      | passwordSame |
 	| !@$#%$#%#    | passwordSame |
 	| user98574ame | passwordSame |
+
+@login
+Scenario Outline: 06_Login_API
+	When Send rest for login user <userName> <password>
+	Then Validate body response <bodyResponse>
+
+Examples:
+	| userName    | password    | bodyResponse |
+	| userNameAPI | passwordAPI | Auth_token:  |

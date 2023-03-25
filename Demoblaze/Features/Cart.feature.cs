@@ -187,6 +187,169 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("03_Place_to_order")]
+        [NUnit.Framework.CategoryAttribute("cart")]
+        [NUnit.Framework.TestCaseAttribute("phone", "Abraham", "Mexico", "Puebla", "12345678934", "12", "2029", null)]
+        [NUnit.Framework.TestCaseAttribute("notebook", "Juan", "Spain", "Madrid", "123", "01", "2000", null)]
+        [NUnit.Framework.TestCaseAttribute("monitor", "123", "123", "123", "123", "123", "123", null)]
+        public void _03_Place_To_Order(string produtType, string name, string country, string city, string creditCard, string creditcardmonth, string creditCardYear, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "cart"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("produtType", produtType);
+            argumentsOfScenario.Add("name", name);
+            argumentsOfScenario.Add("country", country);
+            argumentsOfScenario.Add("city", city);
+            argumentsOfScenario.Add("creditCard", creditCard);
+            argumentsOfScenario.Add("creditcardmonth", creditcardmonth);
+            argumentsOfScenario.Add("creditCardYear", creditCardYear);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("03_Place_to_order", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 40
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+#line 41
+ testRunner.Given(string.Format("Go to category product {0}", produtType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 42
+ testRunner.Given("Open product to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 43
+ testRunner.When("Click on add to cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 44
+ testRunner.And("Click on acept to addproduct", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 45
+ testRunner.And("Go to cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 46
+ testRunner.And("Click on place order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 47
+ testRunner.And(string.Format("Enter client name {0}", name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 48
+ testRunner.And(string.Format("Enter client country {0}", country), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 49
+ testRunner.And(string.Format("Enter client city {0}", city), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 50
+ testRunner.And(string.Format("Enter client credit card {0}", creditCard), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 51
+ testRunner.And(string.Format("Enter month of credit card {0}", creditcardmonth), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 52
+ testRunner.And(string.Format("Enter year of credit card {0}", creditCardYear), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 53
+ testRunner.And("Click on purchase button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 54
+ testRunner.Then(string.Format("Validate the information {0} {1}", name, creditCard), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("04_Place_to_order_cancel")]
+        [NUnit.Framework.CategoryAttribute("cart")]
+        [NUnit.Framework.TestCaseAttribute("phone", "Abraham", "Mexico", "Puebla", "12345678934", "12", "2029", null)]
+        [NUnit.Framework.TestCaseAttribute("notebook", "Juan", "Spain", "Madrid", "123", "01", "2000", null)]
+        [NUnit.Framework.TestCaseAttribute("monitor", "123", "123", "123", "123", "123", "123", null)]
+        public void _04_Place_To_Order_Cancel(string produtType, string name, string country, string city, string creditCard, string creditcardmonth, string creditCardYear, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "cart"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("produtType", produtType);
+            argumentsOfScenario.Add("name", name);
+            argumentsOfScenario.Add("country", country);
+            argumentsOfScenario.Add("city", city);
+            argumentsOfScenario.Add("creditCard", creditCard);
+            argumentsOfScenario.Add("creditcardmonth", creditcardmonth);
+            argumentsOfScenario.Add("creditCardYear", creditCardYear);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("04_Place_to_order_cancel", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 63
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+#line 64
+ testRunner.Given(string.Format("Go to category product {0}", produtType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 65
+ testRunner.Given("Open product to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 66
+ testRunner.When("Click on add to cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 67
+ testRunner.And("Click on acept to addproduct", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 68
+ testRunner.And("Go to cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 69
+ testRunner.And("Click on place order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 70
+ testRunner.And(string.Format("Enter client name {0}", name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 71
+ testRunner.And(string.Format("Enter client country {0}", country), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 72
+ testRunner.And(string.Format("Enter client city {0}", city), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 73
+ testRunner.And(string.Format("Enter client credit card {0}", creditCard), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 74
+ testRunner.And(string.Format("Enter month of credit card {0}", creditcardmonth), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 75
+ testRunner.And(string.Format("Enter year of credit card {0}", creditCardYear), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 76
+ testRunner.And("Click on cancel purchase button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

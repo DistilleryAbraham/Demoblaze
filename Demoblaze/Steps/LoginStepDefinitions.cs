@@ -71,5 +71,11 @@ namespace Demoblaze.Steps
             WhenClickOnLoginButton();
             Helper.wait(Helper.tLow);
         }
+        [When(@"Send rest for login user (.*) (.*)")]
+        public void WhenSendRestForLoginUser(string user, string password)
+        {
+            Rest.PostRequest(loginPage.createBodyForLoginRest(user, password), "https://api.demoblaze.com/login");
+        }
+
     }
 }

@@ -60,5 +60,65 @@ namespace Demoblaze.Steps
         {
             Assert.IsTrue(cartPage.validateProducts());
         }
+
+        [When(@"Click on place order")]
+        public void WhenClickOnPlaceOrder()
+        {
+            cartPage.clickOnPlaceOrder();
+        }
+
+        [When(@"Enter client name (.*)")]
+        public void WhenEnterClientName(string name)
+        {
+            cartPage.enterClientName(name);
+        }
+
+        [When(@"Enter client country (.*)")]
+        public void WhenEnterClientCountry(string country)
+        {
+            cartPage.enterClientCountry(country);
+        }
+
+        [When(@"Enter client city (.*)")]
+        public void WhenEnterClientCity(string city)
+        {
+            cartPage.enterClientCity(city);
+        }
+
+        [When(@"Enter client credit card (.*)")]
+        public void WhenEnterClientCreditCard(string card)
+        {
+            cartPage.enterClientCreditCard(card);
+        }
+
+        [When(@"Enter month of credit card (.*)")]
+        public void WhenEnterMonthOfCreditCard(string month)
+        {
+            cartPage.enterMonth(month);
+        }
+
+        [When(@"Enter year of credit card (.*)")]
+        public void WhenEnterYearOfCreditCard(string year)
+        {
+            cartPage.enterYear(year);
+        }
+
+        [When(@"Click on purchase button")]
+        public void WhenClickOnPurchaseButton()
+        {
+            cartPage.clickPurchase();
+        }
+
+        [Then(@"Validate the information (.*) (.*)")]
+        public void ThenValidateTheInformation(string name, string card)
+        {
+            Assert.IsTrue(cartPage.validateInformation(name, card));
+        }
+        [When(@"Click on cancel purchase button")]
+        public void WhenClickOnCancelPurchaseButton()
+        {
+            cartPage.clickClosePurchase();
+        }
+
     }
 }
