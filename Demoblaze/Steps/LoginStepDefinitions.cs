@@ -1,3 +1,4 @@
+using Demoblaze.Helpers;
 using Demoblaze.Hooks;
 using Demoblaze.Pages;
 using Demoblaze.Request;
@@ -68,9 +69,7 @@ namespace Demoblaze.Steps
             WhenEnterUsernameToLogin(username);
             WhenEnterPasswordToLogin(password);
             WhenClickOnLoginButton();
+            Helper.wait(Helper.tLow);
         }
-
-
-
     }
 }

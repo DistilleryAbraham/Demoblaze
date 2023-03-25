@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Demoblaze.Helpers;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Demoblaze.Pages
 {
-    internal class ProductStorePage : BasePage
+    public class ProductStorePage : BasePage
     {
         public ProductStorePage(IWebDriver driver) { Driver = driver; }
 
@@ -16,6 +17,7 @@ namespace Demoblaze.Pages
         protected By lblProducts = By.Id("tbodyid");
         protected By product = By.Id("article");
         protected By price = By.XPath("//div[@class='card-block']");
+        protected By productlink = By.XPath("//div[@class='col-lg-4 col-md-6 mb-4']");
 
         public bool hasTitle() => hasElement(lblProductStore);
         public bool hasCategories() => hasElement(lblCategories);
@@ -55,6 +57,15 @@ namespace Demoblaze.Pages
                 response = true;
             };
             return response;
+        }
+        public void clickProductType(string productType)
+        {
+            click(By.XPath(@$"//*[@onclick=""byCat('{productType}')""]"));
+        }
+        public void selectProduct()
+        {
+            Helper.wait(Helper.tLow);
+            click(findElements(productlink)[Helper.generateRandomNumber(0, findElements(productlink).Count - 1)]);
         }
 
     }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Demoblaze.Pages
 {
-    internal class LoginPage : BasePage
+    public class LoginPage : BasePage
     {
         public LoginPage(IWebDriver driver) { Driver = driver; }
 
